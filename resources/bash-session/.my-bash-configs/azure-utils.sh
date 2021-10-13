@@ -1,13 +1,7 @@
 #!/bin/bash
 
-# Listing
-alias ll="ls -lh"
-alias lk="ls -halv --group-directories-first"
-alias lm="ls -alv"
+# This file is ment to be sourced at shell session login
 
-# Kubrnetes
-alias kubectl="kubectl.exe"
-alias kc="kubectl"
 
 function _connect-aks {
     local kluster="aks-mosl-${1}-001"
@@ -37,7 +31,12 @@ function _connect-aks {
 }
 
 
-# Azure
+
+
+## VarGroup Management
+########################
+# (please check if some decent cli extension is already availables)
+
 function _create_az_vargroup {
     # Secret variables should be managed using az pipelines variable-group variable commands
     local var_group_name="${1}"
@@ -141,4 +140,3 @@ IFS='
 
     [ ${flag} -eq 0 ] && _delete_az_vargroup_var "${var_group_name}" "${dummyName}"
 }
-
