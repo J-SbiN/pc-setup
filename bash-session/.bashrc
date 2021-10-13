@@ -124,6 +124,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# third party software aliases and custom functions
+if [ -f ~/.my-bash-configs/bash_thirdparty ]; then
+    . ~/.my-bash-configs/bash_thirdparty
+fi
 
 
 ##  General Stuff
@@ -160,11 +164,4 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
-fi
-
-## Third party on bash
-######################
-
-if [ -f ~/.bash_thirdparty]; then
-    . ~/.bash_thirdparty
 fi

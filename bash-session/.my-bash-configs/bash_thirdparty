@@ -1,16 +1,26 @@
-# this file is ment to be sourced by ~/.bashrc
+#!/bin/bash
 
+# This file is ment to be sourced at shell session login
+
+# TODO : check if program is installed before loading functions and aliases
 
 
 ## Azure
 #########
 
+# fetch my personal functions
 if [ -f ~/.my-utils/azure-utils.sh ]; then
     . ~/.my-utils/azure-utils.sh
 fi
 
 # Azure-Cli autocompletion
 source /etc/bash_completion.d/azure-cli
+
+
+## Kubernetes
+##############
+
+alias kc="kubectl"
 
 
 
