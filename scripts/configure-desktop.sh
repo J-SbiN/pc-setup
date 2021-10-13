@@ -27,27 +27,3 @@ gsettings set com.canonical.unity-greeter background ${BKG_IMG_PATH}
 
 # custom time format
 gsettings set com.canonical.indicator.datetime custom-time-format "${TIME_FORMAT}"
-
-
-# disable bell 
-    #you need to uncomment (or add if not already there) the line set bell-style none in your /etc/inputrc file.
-
-
-
-
-# Terminal Preferences
-#######################
-# To disable the beep also in less (i.e. also in man pages and when using "git diff") you need to add export LESS="$LESS -R -Q" in your ~/.profile file.
-
-
-
-
-# vim Preferences
-##################
-    # To disable the beep also in vim you need to add set visualbell in your ~/.vimrc file.
-
-
-
-
-# VS-Code Preferences
-######################
