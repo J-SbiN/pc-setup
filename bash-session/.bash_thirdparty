@@ -1,0 +1,65 @@
+# this file is ment to be sourced by ~/.bashrc
+
+
+
+## Azure
+#########
+
+if [ -f ~/.my-utils/azure-utils.sh ]; then
+    . ~/.my-utils/azure-utils.sh
+fi
+
+# Azure-Cli autocompletion
+source /etc/bash_completion.d/azure-cli
+
+
+
+## Teraform
+############
+
+# autocomplition
+complete -C /usr/local/bin/terraform terraform
+
+
+
+## ASDF
+##########
+# . $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/completions/asdf.bash
+
+
+
+## Maven
+##########
+
+# set PATH so it includes mavem
+if [ -d "/etc/opt/apache-maven-3.8.2/bin" ] ; then
+    PATH="/etc/opt/apache-maven-3.8.2/bin/:$PATH"
+fi
+
+
+
+## NVM
+#########
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+
+
+## Docker 
+################
+
+# Point Docker Host to external server
+export DOCKER_HOST=tcp://localhost:2375
+
+export DOCKER_HOST=tcp://localhost:2375
+
+
+
+## SDKMAN
+##########
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

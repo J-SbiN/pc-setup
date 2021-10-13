@@ -9,6 +9,7 @@ case $- in
 esac
 
 
+
 ## History
 #############
 
@@ -20,23 +21,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
-
-
-##  General
-##############
-
-# Turn bell off
-bind 'set bell-style none'
-
-# Seting display for lauching GUI apps
-export DISPLAY=':0'
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 
 
@@ -46,12 +32,6 @@ shopt -s checkwinsize
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
-
-
-
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 
 
@@ -107,6 +87,32 @@ esac
 
 
 
+## Coloring
+#################
+function set_coloring_aliases () {
+    alias ls='ls --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+}
+
+# enable color support of ls and also add handy aliases
+if [ -f ~/.mydircolors ]; then
+    eval "$(dircolors -b ~/.mydircolors)"
+    set_coloring_aliases
+elif [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    set_coloring_aliases
+fi
+
+# colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+
+
 ## Aliases
 #############
 
@@ -120,25 +126,21 @@ fi
 
 
 
-## Coloring
-#################
+##  General Stuff
+##################
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
+# Turn bell off
+bind 'set bell-style none'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
+# Seting display for lauching GUI apps
+export DISPLAY=':0'
 
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
-
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -160,53 +162,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Teraform autocomplition
-complete -C /usr/local/bin/terraform terraform
+## Third party on bash
+######################
 
-# Azure-Cli autocompletion
-source /etc/bash_completion.d/azure-cli
-
-
-## My Utils
-#############
-
-# Azure
-if [ -f ~/.my-utils/azure-utils.sh ]; then
-    . ~/.my-utils/azure-utils.sh
+if [ -f ~/.bash_thirdparty]; then
+    . ~/.bash_thirdparty
 fi
-
-
-## ASDF
-##########
-# . $HOME/.asdf/asdf.sh
-# . $HOME/.asdf/completions/asdf.bash
-
-
-## Maven
-##########
-
-# set PATH so it includes mavem
-if [ -d "/etc/opt/apache-maven-3.8.2/bin" ] ; then
-    PATH="/etc/opt/apache-maven-3.8.2/bin/:$PATH"
-fi
-
-
-## NVM
-#########
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-
-
-## Docker 
-################
-
-# Point Docker Host to external server
-export DOCKER_HOST=tcp://localhost:2375
-
-export DOCKER_HOST=tcp://localhost:2375
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
