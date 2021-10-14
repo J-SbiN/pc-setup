@@ -29,7 +29,9 @@ As I chose Ubuntu Unity 20.04.2 (@ year 2021) expect to find this project suitin
 
 ---
 
+# What does the default configuration do?
 
+---
 
 # Change your Config File (or don't!)
 There is a `defaul-config.conf` file. In there all the possibly used parameters are set - so that you may just run the program and not care about a thing!
