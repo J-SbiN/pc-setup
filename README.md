@@ -66,3 +66,18 @@ or
 ```bash
 sudo apt install dconf-tools
 ```
+
+
+---
+
+## TO DO Ideas
+- create "profiles"
+    - dev-stuff
+    - gamming-stuff
+    - dj-stuff
+    - guitar-stuff
+    - musician-stuff
+    - manager-stuff
+    - aud-stuff
+    - img-stuff
+    - vid-stuff
