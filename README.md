@@ -29,7 +29,9 @@ As I chose Ubuntu Unity 20.04.2 (@ year 2021) expect to find this project suitin
 
 ---
 
+# What does the default configuration do?
 
+---
 
 # Change your Config File (or don't!)
 There is a `defaul-config.conf` file. In there all the possibly used parameters are set - so that you may just run the program and not care about a thing!
@@ -64,3 +66,18 @@ or
 ```bash
 sudo apt install dconf-tools
 ```
+
+
+---
+
+## TO DO Ideas
+- create "profiles"
+    - dev-stuff
+    - gamming-stuff
+    - dj-stuff
+    - guitar-stuff
+    - musician-stuff
+    - manager-stuff
+    - aud-stuff
+    - img-stuff
+    - vid-stuff
