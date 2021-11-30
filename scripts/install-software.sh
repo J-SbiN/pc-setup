@@ -20,11 +20,13 @@ sudo apt install -y     \
     fortunes            \
     gimp                \
     git                 \
+    gitg                \
     gitk                \
     google-chrome-stable    \
     kubernetes          \
     lutris              \
     nautilus            \
+    neofetch            \
     notepadqq           \
     obs-studio          \
     steam-installer     \
