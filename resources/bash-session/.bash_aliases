@@ -1,16 +1,13 @@
 #!/bin/bash
 
-# Listing
-alias l="ls -lh"
-alias ll="ls -alh"
-alias lk="ls -halv --group-directories-first"
-alias lm="ls -alv"
 
-# Navigation
+## Listing
 ##############
-alias ll='ls -alF'
+alias l="ls -lh"
+#alias ll='ls -alhF'
 alias la='ls -A'
-alias l='ls -CF'
+#alias lk="ls -halv --group-directories-first"
+#alias lm="ls -alv"
 
 alias lm="ls -alhvF --group-directories-first --color=auto"
 alias ll="LC_ALL="C" ls -lhF --group-directories-first --color=auto"
@@ -50,34 +47,10 @@ function lll () {
 }
 
 
-# Docker
-##########
-#alias lsd="docker ps"
-#alias lda="docker ps -a"
-#alias ldl="docker ps -l"
-#alias ldlq="docker ps -l -q"
-#alias ldaq="docker ps -a -q"
-#alias ldi="docker images"
-#alias ldia="docker images -a"
-#alias ldiaq="docker images -a -q"
-#
-#alias dstop="docker stop"
-#alias drm="docker rm"
-#alias drun="docker run"
-#alias drmi="docker rmi"
 
-#alias dbuild="docker build --force-rm --rm -t"
-#alias dokit="docker run -it"
-#alias dokd="docker run -d"
+## Third Party
+###############
 
-# Kubernetes
-#############
-alias kc="kubectl"
-alias mk8="microk8s"
-alias mkc="microk8s kubectl"
-
-# GIT
-########
-alias gitl="git log --pretty=format:'%h - %p - %cn - %cr  : %s' --stat --graph"
-alias gitlm="git log --author='Jorge Sabino' --pretty=format:'%h - %p - %cr  : %s' --stat --graph"
-
+if [ -f ~/.my-utils/bash_thirdparty ]; then
+    . ~/.my-utils/bash_thirdparty
+fi
