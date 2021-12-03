@@ -67,9 +67,13 @@ fi
 # Including Git Branch on PS1
 if [ "$color_prompt" = yes ]; then
 #    PS1='\n${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\]\n\[\033[01;31m\][\t]\[\033[01;34m\]  \$\[\033[00m\] ' # __git_ps1 is defined in git's files
-    PS1='\n\[\033[01;30;41m\]$SHELL\[\033[00m\]   ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\]\n\[\033[01;31m\][\t]\[\033[01;34m\]  \$\[\033[00m\] ' # __git_ps1 is defined in git's files
-else
+#    PS1='\n\[\033[01;30;41m\]$SHELL\[\033[00m\]   ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\]\n\[\033[01;31m\][\t]\[\033[01;34m\]  \$\[\033[00m\] ' # __git_ps1 is defined in git's files
     PS1='\n${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\]\n\[\033[01;31m\][\t]\[\033[01;34m\]  \$\[\033[00m\] ' # __git_ps1 is defined in git's files
+
+else
+#    PS1='\n${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\]\n\[\033[01;31m\][\t]\[\033[01;34m\]  \$\[\033[00m\] ' # __git_ps1 is defined in git's files
+    PS1='\n${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\]\n\[\033[01;31m\][\t]\[\033[01;34m\]  \$\[\033[00m\] ' # __git_ps1 is defined in git's files
+
 fi
 
 export PS4='# ${BASH_SOURCE}:${LINENO}: ${FUNCNAME[0]}() - [${SHLVL},${BASH_SUBSHELL},$?] '
