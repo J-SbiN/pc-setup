@@ -5,9 +5,57 @@
 # TODO : check if program is installed before loading functions and aliases
 
 
+
+## GIT
+#########
+alias gitl="git log --pretty=format:'%h - %p - %cn - %cr  : %s' --stat --graph"
+alias gitlm="git log --author='Jorge Sabino' --pretty=format:'%h - %p - %cr  : %s' --stat --graph"
+
+
+
+
+# Docker
+##########
+#alias lsd="docker ps"
+#alias lda="docker ps -a"
+#alias ldl="docker ps -l"
+#alias ldlq="docker ps -l -q"
+#alias ldaq="docker ps -a -q"
+#alias ldi="docker images"
+#alias ldia="docker images -a"
+#alias ldiaq="docker images -a -q"
+#
+#alias dstop="docker stop"
+#alias drm="docker rm"
+#alias drun="docker run"
+#alias drmi="docker rmi"
+#
+#alias dbuild="docker build --force-rm --rm -t"
+#alias dokit="docker run -it"
+#alias dokd="docker run -d"
+
+
+
+
+## Kubernetes
+##############
+alias kc="kubectl"
+alias mk8="microk8s"
+alias mkc="microk8s kubectl"
+
+
+
+
+## Teraform
+############
+# autocomplition
+complete -C /usr/local/bin/terraform terraform
+
+
+
+
 ## Azure
 #########
-
 # fetch my personal functions
 if [ -f ~/.my-utils/azure-utils.sh ]; then
     . ~/.my-utils/azure-utils.sh
@@ -16,19 +64,6 @@ fi
 # Azure-Cli autocompletion
 source /etc/bash_completion.d/azure-cli
 
-
-## Kubernetes
-##############
-
-alias kc="kubectl"
-
-
-
-## Teraform
-############
-
-# autocomplition
-complete -C /usr/local/bin/terraform terraform
 
 
 
@@ -41,7 +76,6 @@ complete -C /usr/local/bin/terraform terraform
 
 ## Maven
 ##########
-
 # set PATH so it includes mavem
 if [ -d "/etc/opt/apache-maven-3.8.2/bin" ] ; then
     PATH="/etc/opt/apache-maven-3.8.2/bin/:$PATH"
@@ -51,7 +85,6 @@ fi
 
 ## NVM
 #########
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
@@ -59,17 +92,13 @@ export NVM_DIR="$HOME/.nvm"
 
 ## Docker 
 ################
-
 # Point Docker Host to external server
-export DOCKER_HOST=tcp://localhost:2375
-
 export DOCKER_HOST=tcp://localhost:2375
 
 
 
 ## SDKMAN
 ##########
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

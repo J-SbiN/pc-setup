@@ -128,10 +128,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# third party software aliases and custom functions
-if [ -f ~/.my-bash-configs/bash_thirdparty ]; then
-    . ~/.my-bash-configs/bash_thirdparty
-fi
 
 
 ##  General Stuff
