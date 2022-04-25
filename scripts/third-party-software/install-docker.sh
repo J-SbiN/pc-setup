@@ -23,7 +23,15 @@ sudo apt-get update
 # install docker
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 
-
 # To install a specific version, (i) list the available version and (ii) install it
 # apt-cache madison docker-ce
 # sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
+
+# installing autocompletion
+sudo curl \
+    -L https://raw.githubusercontent.com/docker/compose/1.29.2/contrib/completion/bash/docker-compose \
+    -o /etc/bash_completion.d/docker-compose
+
+# if you wish to use an alias and extend autocompletion to that alias
+# echo 'alias dkc=docker-compose' >> ~/.bashrc
+# echo 'complete -F _docker_compose dkc' >> ~/.bashrc

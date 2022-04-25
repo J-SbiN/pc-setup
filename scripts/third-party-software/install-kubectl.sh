@@ -22,12 +22,12 @@ sudo apt-get update
 # install kubectl
 sudo apt-get install -y kubectl
 
-# enabling auto completion
+# enabling auto completion for kubectl subcommands
 kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
 
 # if you wish to use an alias and extend autocompletion to that alias
-# echo 'alias kc=kubectl' >> ~/.bashrc
-# echo 'complete -F __start_kubectl kc' >> ~/.bashrc
+# echo 'alias <ALIAS>=kubectl' >> ~/.bashrc
+# echo 'complete -F __start_kubectl <ALIAS>' >> ~/.bashrc
 
 # To the user
 echo "Before using kubectl you should reload your session."
