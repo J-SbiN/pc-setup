@@ -1,5 +1,9 @@
 #!/bin/bash
 
+##  This script will install minikube, its dependencies and enable minikube auto-completion.
+##  minikube creates a single-node cluster on your machine.
+##  Notice that this doesn't install a CLI to the manage the cluster.
+
 # refreshing references
 sudo apt-get update -y
 
