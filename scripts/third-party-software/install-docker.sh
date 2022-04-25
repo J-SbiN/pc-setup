@@ -22,3 +22,8 @@ sudo apt-get update
 
 # install docker
 sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+
+# To install a specific version, (i) list the available version and (ii) install it
+# apt-cache madison docker-ce
+# sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
