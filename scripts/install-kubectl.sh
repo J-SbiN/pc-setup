@@ -1,6 +1,6 @@
 #!/bin/bash
 
-##  This script will install kubectl and its dependencies.
+##  This script will install kubectl, its dependencies and enable kubectl auto-completion.
 ##  kubectl is a CLI tool to manage a kubernetes cluster.
 ##  Notice that this doesn't install a kubernetes server/service.
 
@@ -22,3 +22,12 @@ sudo apt-get update
 # install kubectl
 sudo apt-get install -y kubectl
 
+# enabling auto completion
+kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
+
+# if you wish to use an alias and extend autocompletion to that alias
+# echo 'alias kc=kubectl' >> ~/.bashrc
+# echo 'complete -F __start_kubectl kc' >> ~/.bashrc
+
+# To the user
+echo "Before using kubectl you should reload your session"
