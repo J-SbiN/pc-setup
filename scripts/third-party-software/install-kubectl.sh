@@ -7,7 +7,7 @@
 # update references
 sudo apt-get update
 
-# installing dependencies
+# installing pre-dependencies
 sudo apt-get install -y apt-transport-https ca-certificates curl
 
 # add the Google Cloud public signing key
@@ -30,4 +30,4 @@ kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
 # echo 'complete -F __start_kubectl kc' >> ~/.bashrc
 
 # To the user
-echo "Before using kubectl you should reload your session"
+echo "Before using kubectl you should reload your session."
