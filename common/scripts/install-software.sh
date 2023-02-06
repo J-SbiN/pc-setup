@@ -12,6 +12,7 @@ sudo apt upgrade -y
 # from aptitude repos
 sudo apt install -y     \
     audacity            \
+    barrier             \
     ca-certificates     \
     cowsay              \
     docker              \
@@ -19,7 +20,16 @@ sudo apt install -y     \
     fortunes            \
     gimp                \
     git                 \
+    gitg                \
+    gitk                \
+    google-chrome-stable    \
     kubernetes          \
+    lutris              \
+    nautilus            \
+    neofetch            \
+    notepadqq           \
+    obs-studio          \
+    steam-installer     \
     terminator          \
     unity-tweak-tool    \
     vim                 \
@@ -33,4 +43,5 @@ sudo snap install       \
     zoom-client
 
 
-# from third-party
+# from third-party repos
+    # dropbox
